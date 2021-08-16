@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 链接伪类选择器 */
+        /* 必须按照 LVHA 的循顺序声明:link :visited :hover :active */
+        /* 记忆法：love hate（爱恨原则）或者 lv包包hao */
+
+        /* 为访问过的链接 把没有点击过的(访问过的)链接选出来*/
+        a:link {
+            color: #333;
+            text-decoration: none;
+        }
+
+        /* 选择点击过的(访问过的)链接 */
+        a:visited {
+            color: orange;
+        }
+
+        /* 选择鼠标经过的那个链接 */
+        a:hover {
+            color: skyblue;
+        }
+
+        /* 选择的是鼠标正在按下还没有弹起的那个链接 */
+        a:active {
+            color: green;
+        }
+
+        /* focus伪类选择器 用于选取获得焦点的表单元素*/
+        /* 把活得光标的input表单元素选取出来 */
+        input:focus {
+            background-color: pink;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">jns</a><br>
+    <input type="text">
+    <input type="text">
+    <input type="text">
+</body>
+
+</html>
