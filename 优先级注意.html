@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 父亲的权重是100 */
+        #dad {
+            color: red;
+        }
+
+        /* p 继承的权重为0 */
+        /* 所以我们看标签到底执行那个样式，就先看这个标签有没有直接被选出来 */
+        p {
+            color: pink;
+        }
+
+        /* a 链接浏览器默认制定了一个样式 蓝色的 有下划线 a{color: blue;} */
+        body {
+            color: red;
+        }
+
+        a {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="dad">
+        <p>你哦为哦非你哦我</p>
+    </div>
+    <a href="#">我是单独的样式</a>
+    <br>
+    <br>
+    <table border="1" cellpadding="5" cellspacing="0">
+        <tr>
+            <th>选择器</th>
+            <th>选择器权重</th>
+        </tr>
+        <tr>
+            <td>继承 或者 *</td>
+            <td>0,0,0,0</td>
+        </tr>
+        <tr>
+            <td>元素选择器</td>
+            <td>0,0,0,1</td>
+        </tr>
+        <tr>
+            <td>类选择器，伪类选择器</td>
+            <td>0,0,1,0</td>
+        </tr>
+        <tr>
+            <td>ID选择器</td>
+            <td>0,1,0,0</td>
+        </tr>
+        <tr>
+            <td>行内样式 style=""</td>
+            <td>1,0,0,0</td>
+        </tr>
+        <tr>
+            <td>!important 重要的</td>
+            <td>无穷大</td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    1.权重是有4组数字组成，但是不会有进位<br>
+    2.可以理解为类选择器永远大于元素选择器，id选择器永远大于类选择器，以此类推<br>
+    3.等级判断从左向右，如果某一位数值相同，则判断下一位数值<br>
+    4.可以简单记忆法：通配符和继承权重为0，标签选择器为1，类(伪类)选择器为10，id选择器100，行内样式表为1000，!important无穷大<br>
+    5.继承的权重是0，如果该元素没有直接选中，不管父元素权重多高，子元素得到的权重都是0<br>
+</body>
+
+</html>
