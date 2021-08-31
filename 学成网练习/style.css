@@ -99,7 +99,7 @@ a {
 
 .user {
     float: right;
-    margin-top: 30px;
+    margin-top: 37px;
     margin-right: 30px;
 }
 
@@ -490,4 +490,9 @@ a {
 
 .guding ul #top {
     margin: 24px 0 12px 6px;
+}
+
+.user #qq {
+    position: relative;
+    top: -7px;
 }
